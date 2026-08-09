@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Headley Fine Foods — a family-run café bringing traditional village hospitality together with modern food and flavours from around the world." />
+  <title>Headley Fine Foods | Café, Deli & Buffets</title>
+  <style>
+    :root{
+      --green:#1f3b2e;
+      --green2:#284737;
+      --gold:#b29357;
+      --cream:#f7f2e9;
+      --paper:#fffdf8;
+      --ink:#171916;
+      --charcoal:#151615;
+      --muted:#6c6a64;
+      --line:#e5ddd1;
+      --max:1180px;
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--paper);color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.04;letter-spacing:-.025em;margin:0}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin:auto}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;font-weight:800;color:var(--gold);margin-bottom:16px}
+    .section-title{font-size:clamp(2.45rem,5vw,4.65rem);margin-bottom:20px}
+    .section-lead{font-size:1.08rem;color:var(--muted);max-width:760px;margin:0}
+    .topbar{background:var(--green);color:#f5efe6;text-align:center;padding:9px 15px;font-size:.88rem;letter-spacing:.035em}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,253,248,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(31,59,46,.09)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand img{width:54px;height:54px;object-fit:cover;border-radius:50%;border:1px solid #d8c9ab}
+    .brand span{font-family:Georgia,serif;font-size:1.04rem;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
+    .navlinks{display:flex;gap:28px;align-items:center;font-size:.92rem}
+    .navlinks a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-green{background:var(--green);color:white}
+    .btn-gold{background:var(--gold);color:white}
+    .btn-outline{border-color:rgba(255,255,255,.5);color:white}
+    .btn-light{background:white;color:var(--green)}
+
+    .hero{background:var(--charcoal);color:white;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:.93fr 1.07fr;min-height:680px;align-items:center;gap:58px;padding:62px 0}
+    .hero h1{font-size:clamp(3.5rem,7vw,6.8rem);max-width:730px}
+    .hero .intro{font-size:1.08rem;color:#dedbd4;max-width:650px;margin:24px 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-visual{position:relative;height:540px}
+    .hero-photo{position:absolute;inset:0 70px 0 0;border-radius:32px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+    .hero-photo img{height:100%;object-fit:cover}
+    .hero-logo{position:absolute;width:205px;height:205px;right:0;bottom:34px;border-radius:28px;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.28);border:6px solid var(--cream)}
+    .hero-logo img{height:100%;object-fit:cover}
+
+    section{padding:92px 0}
+    .story-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:74px;align-items:start}
+    .story-copy p{font-size:1.12rem;color:#484943;margin:0 0 18px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+    .value{background:#fff;border:1px solid var(--line);padding:24px;border-radius:20px}
+    .value strong{display:block;font-family:Georgia,serif;font-size:1.35rem;color:var(--green);margin-bottom:6px}
+    .value span{font-size:.9rem;color:var(--muted)}
+
+    .food{background:var(--cream)}
+    .food-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:230px;gap:14px;margin-top:42px}
+    .shot{position:relative;overflow:hidden;border-radius:22px;background:#222}
+    .shot img{height:100%;object-fit:cover;transition:transform .5s ease}
+    .shot:hover img{transform:scale(1.025)}
+    .shot:after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+    .shot span{position:absolute;z-index:2;left:18px;bottom:15px;color:white;font-weight:700;font-size:.92rem}
+    .s1{grid-column:span 5;grid-row:span 2}
+    .s2{grid-column:span 4}
+    .s3{grid-column:span 3}
+    .s4{grid-column:span 3}
+    .s5{grid-column:span 4}
+    .s6{grid-column:span 5}
+    .s7{grid-column:span 3}
+    .s8{grid-column:span 4}
+    .s9{grid-column:span 5}
+
+    .menu-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+    .menu-card{border:1px solid var(--line);border-radius:22px;padding:30px;background:#fff}
+    .menu-card h3{font-size:2rem;color:var(--green);margin-bottom:12px}
+    .menu-card p{margin:0;color:var(--muted)}
+    .tag{margin-top:25px;color:var(--gold);font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800}
+
+    .buffet-wrap{background:var(--green);color:white;border-radius:34px;padding:54px;display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center}
+    .buffet-wrap h2{font-size:clamp(2.4rem,4.5vw,4.2rem)}
+    .buffet-wrap p{color:#e6e0d7;max-width:760px;margin:16px 0 0;font-size:1.04rem}
+    .buffet-actions{display:flex;flex-direction:column;gap:10px;min-width:220px}
+
+    .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:38px}
+    .panel{border:1px solid var(--line);border-radius:24px;padding:32px;background:white}
+    .panel h3{font-size:2rem;color:var(--green);margin-bottom:18px}
+    .contact{display:grid;gap:12px;color:var(--muted)}
+    .contact a:hover{color:var(--green)}
+    .hours{display:grid;gap:0}
+    .hours div{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px dashed #ddd4c7;color:var(--muted)}
+    .hours div:last-child{border-bottom:0}
+    .hours strong{color:var(--ink)}
+
+    footer{background:#111311;color:#d8d1c7;padding:46px 0;margin-top:80px}
+    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .footer-brand{display:flex;align-items:center;gap:13px}
+    .footer-brand img{width:62px;height:62px;object-fit:cover;border-radius:50%}
+    .footer-brand strong{font-family:Georgia,serif;font-size:1.12rem;color:white;letter-spacing:.04em}
+    footer small{color:#918f89}
+
+    @media(max-width:920px){
+      .navlinks{display:none}
+      .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr}
+      .hero-visual{height:430px}
+      .values,.menu-cards{grid-template-columns:1fr}
+      .food-grid{grid-template-columns:1fr 1fr;grid-auto-rows:260px}
+      .shot{grid-column:auto!important;grid-row:auto!important}
+      .s1{grid-column:span 2!important}
+      .buffet-wrap{grid-template-columns:1fr}
+      .buffet-actions{flex-direction:row;flex-wrap:wrap}
+    }
+    @media(max-width:580px){
+      section{padding:66px 0}
+      nav{height:68px}
+      .brand img{width:46px;height:46px}
+      .brand span{font-size:.86rem}
+      .hero-grid{padding:48px 0;gap:38px}
+      .hero h1{font-size:3.55rem}
+      .hero-visual{height:350px}
+      .hero-photo{inset:0 38px 0 0}
+      .hero-logo{width:135px;height:135px;right:0;bottom:18px;border-width:4px;border-radius:20px}
+      .values{grid-template-columns:1fr}
+      .food-grid{grid-template-columns:1fr;grid-auto-rows:260px}
+      .s1{grid-column:auto!important}
+      .buffet-wrap{padding:34px 26px;border-radius:24px}
+      .buffet-actions{flex-direction:column}
+      .footer-grid{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Family-run café • Local produce • Flavours from around the world</div>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top">
+          <img src="assets/logo.webp" alt="Headley Fine Foods logo">
+          <span>Headley Fine Foods</span>
+        </a>
+        <div class="navlinks">
+          <a href="#about">Our story</a>
+          <a href="#food">Our food</a>
+          <a href="#buffets">Buffets</a>
+          <a href="#visit">Visit</a>
+        </div>
+        <a class="btn btn-green" href="tel:01428714348">Call the shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Traditional welcome • Modern food</div>
+          <h1>A world of flavour, right here in Headley.</h1>
+          <p class="intro">
+            A family-run café with community at its heart — combining the warmth of a traditional village café
+            with a modern twist on the food we serve.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#food">Discover our food</a>
+            <a class="btn btn-outline" href="#visit">Opening hours</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo"><img src="assets/strawberry_tarts.webp" alt="Fresh strawberry tarts from Headley Fine Foods"></div>
+          <div class="hero-logo"><img src="assets/logo.webp" alt="Headley Fine Foods"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap story-grid">
+        <div>
+          <div class="eyebrow">Our story</div>
+          <h2 class="section-title">Family-run. Community-minded. Full of flavour.</h2>
+        </div>
+        <div class="story-copy">
+          <p>
+            Headley Fine Foods is a family-run business that holds dear the importance of a traditional café
+            and the sense of community that comes with it, while putting a modern twist on the food we serve.
+          </p>
+          <p>
+            We pride ourselves on bringing together famous dishes and flavours from across the world,
+            giving our customers the chance to enjoy something a little different without leaving Headley.
+            From vibrant bowls and flatbreads to homemade bakes and café classics, our counter is always evolving.
+          </p>
+          <p>
+            Wherever possible, we combine those global influences with quality local produce — bringing
+            flavours from across the continents to our village while keeping quality, freshness and community at the centre of what we do.
+          </p>
+          <div class="values">
+            <div class="value"><strong>Family-run</strong><span>A warm, personal café built around its local community.</span></div>
+            <div class="value"><strong>Globally inspired</strong><span>Famous dishes and flavours from across the world.</span></div>
+            <div class="value"><strong>Quality produce</strong><span>Fresh ingredients with local produce used wherever possible.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="food" class="food">
+      <div class="wrap">
+        <div class="eyebrow">From our kitchen</div>
+        <h2 class="section-title">Classic café favourites meet flavours from around the world.</h2>
+        <p class="section-lead">
+          Our food changes regularly, with seasonal specials, globally inspired lunches, savoury bakes and homemade sweet treats.
+        </p>
+
+        <div class="food-grid">
+          <div class="shot s1"><img src="assets/steak_salad.webp" alt="Fresh steak salad"><span>Fresh lunch specials</span></div>
+          <div class="shot s2"><img src="assets/chicken_flatbread.webp" alt="Chicken flatbread"><span>Globally inspired</span></div>
+          <div class="shot s3"><img src="assets/taco.webp" alt="Fresh taco"><span>Modern favourites</span></div>
+          <div class="shot s4"><img src="assets/curry_bowl.webp" alt="Rice bowl"><span>World flavours</span></div>
+          <div class="shot s5"><img src="assets/sausage_rolls.webp" alt="Homemade savoury pastries"><span>Homemade savouries</span></div>
+          <div class="shot s6"><img src="assets/strawberry_tarts.webp" alt="Strawberry tarts"><span>Freshly baked</span></div>
+          <div class="shot s7"><img src="assets/matcha_cookies.webp" alt="Matcha cookies"><span>Something different</span></div>
+          <div class="shot s8"><img src="assets/lemon_cookie.webp" alt="Lemon cookie"><span>Sweet treats</span></div>
+          <div class="shot s9"><img src="assets/buns.webp" alt="Fresh buns"><span>Weekend bakes</span></div>
+        </div>
+
+        <div class="menu-cards">
+          <article class="menu-card">
+            <h3>Café classics</h3>
+            <p>Breakfast favourites, sandwiches, proper coffee and the familiar things a village café should always do well.</p>
+            <div class="tag">Traditional favourites</div>
+          </article>
+          <article class="menu-card">
+            <h3>World flavours</h3>
+            <p>Changing specials inspired by dishes from across Europe, Asia, the Americas and beyond.</p>
+            <div class="tag">Modern twist</div>
+          </article>
+          <article class="menu-card">
+            <h3>Homemade bakes</h3>
+            <p>Sausage rolls, cookies, tarts, buns and sweet treats made fresh and changing throughout the week.</p>
+            <div class="tag">Fresh from the kitchen</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="buffets">
+      <div class="wrap">
+        <div class="buffet-wrap">
+          <div>
+            <div class="eyebrow">Buffets & catering</div>
+            <h2>Planning a buffet?</h2>
+            <p>
+              If you wish to book a buffet, please call the shop or send us your requirements using our online buffet enquiry form.
+              We’ll be happy to discuss what you need and help put together the right selection for your occasion.
+            </p>
+          </div>
+          <div class="buffet-actions">
+            <a class="btn btn-gold" href="tel:01428714348">Call 01428 714348</a>
+            <a class="btn btn-light" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAqnOHh1UQ1pSWVpEOUNSV1g2TTQ3N0FGUTBPMUlTSC4u" target="_blank" rel="noopener">Buffet enquiry form</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="wrap">
+        <div class="eyebrow">Visit Headley Fine Foods</div>
+        <h2 class="section-title">Come and see what’s on the counter.</h2>
+        <p class="section-lead">Fresh food, coffee, homemade bakes and changing specials from Tuesday to Saturday.</p>
+
+        <div class="visit-grid">
+          <div class="panel">
+            <h3>Contact us</h3>
+            <div class="contact">
+              <a href="tel:01428714348">01428 714348</a>
+              <a href="mailto:headleyfinefoods@gmail.com">headleyfinefoods@gmail.com</a>
+              <span>Headley, Hampshire</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Opening hours</h3>
+            <div class="hours">
+              <div><span>Monday</span><strong>Closed</strong></div>
+              <div><span>Tuesday</span><strong>8:00am – 4:00pm</strong></div>
+              <div><span>Wednesday</span><strong>8:00am – 4:00pm</strong></div>
+              <div><span>Thursday</span><strong>8:00am – 4:00pm</strong></div>
+              <div><span>Friday</span><strong>8:00am – 4:00pm</strong></div>
+              <div><span>Saturday</span><strong>8:00am – 4:00pm</strong></div>
+              <div><span>Sunday</span><strong>Closed</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" alt="Headley Fine Foods logo">
+        <div><strong>HEADLEY FINE FOODS</strong><br><small>Family-run café • Headley, Hampshire</small></div>
+      </div>
+      <small>© <span id="year"></span> Headley Fine Foods. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
